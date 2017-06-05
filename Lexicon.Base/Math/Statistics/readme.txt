@@ -1,0 +1,1 @@
+﻿Statistics involves the analysis of the frequency of past events

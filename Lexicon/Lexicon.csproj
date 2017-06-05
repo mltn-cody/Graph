@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6317663B-F57A-44D2-A577-B6203CE90D73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lexicon</RootNamespace>
+    <AssemblyName>Lexicon</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CypherNet, Version=0.9.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CypherNet.0.9.11.0\lib\net45\CypherNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Factory, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Factory.3.2.1.0\lib\net45-full\Ninject.Extensions.Factory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.NamedScope, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.NamedScope.3.2.0.0\lib\net45-full\Ninject.Extensions.NamedScope.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StaticReflection, Version=2.0.4.0, Culture=neutral, PublicKeyToken=b6cf42357ca8f072, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExpressionReflection.2.0.4\lib\net45\StaticReflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accidental\Syllables\English\EnglishSyllableService.cs" />
+    <Compile Include="Concepts\Affixes\Affix.cs" />
+    <Compile Include="Concepts\Interfaces\IPrefix.cs" />
+    <Compile Include="Concepts\Interfaces\ISuffix.cs" />
+    <Compile Include="Concepts\Relationships\IAntonym.cs" />
+    <Compile Include="Concepts\Relationships\IDerivation.cs" />
+    <Compile Include="Concepts\Relationships\IEntails.cs" />
+    <Compile Include="Concepts\Relationships\IInstanceOf.cs" />
+    <Compile Include="Concepts\Relationships\IPartOf.cs" />
+    <Compile Include="Concepts\Relationships\IRegionDomain.cs" />
+    <Compile Include="Concepts\Relationships\ISeeAlso.cs" />
+    <Compile Include="Concepts\Relationships\ISynonym.cs" />
+    <Compile Include="Concepts\Relationships\ITopicDomain.cs" />
+    <Compile Include="Concepts\Relationships\IUsageDomain.cs" />
+    <Compile Include="Concepts\Words\BoundMorpheme.cs" />
+    <Compile Include="Concepts\Words\FreeMorpheme.cs" />
+    <Compile Include="Concepts\Interfaces\IAffix.cs" />
+    <Compile Include="Concepts\Interfaces\IMorpheme.cs" />
+    <Compile Include="Concepts\Interfaces\IWordRoot.cs" />
+    <Compile Include="Concepts\Words\Morpheme.cs" />
+    <Compile Include="Concepts\Affixes\Prefix.cs" />
+    <Compile Include="Concepts\Words\RootWord.cs" />
+    <Compile Include="Systematic\SemanticMeaning.cs" />
+    <Compile Include="Concepts\Affixes\Suffix.cs" />
+    <Compile Include="Concepts\Words\Word.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Accidental\readme.txt" />
+    <Content Include="Cultural\readme.txt" />
+    <Content Include="readme.txt" />
+    <Content Include="Systematic\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Systematic\Grammer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lexicon.Base\Lexicon.Base.csproj">
+      <Project>{3e62d5cf-cd9d-4e25-8433-9198207a865c}</Project>
+      <Name>Lexicon.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

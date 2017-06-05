@@ -1,0 +1,61 @@
+version: '2'
+services:
+	neo4j:
+		restart: always
+		image: neo4j:2.3.2-enterprise
+		container_name: neo4j
+		net: ${NETWORK}
+		environment:
+			- NEO4J_AUTH=none
+			- elasitc="http://elasitic_container"
+		volumes:
+			- ./neo4j/conf:/conf
+			- ./neo4j/plugins:/plugins
+			- ./neo4j/data/import:/data/import
+		ports:
+			- "7474:7474"
+		links:
+			- consul
+	elasticsearch_head:
+	    image: salgat/elasticsearch-head
+	    ports:
+	      - "9100:9100"
+	    links:
+	      - elasticsearch
+	elasticsearch:
+	    image: salgat/elk-cors
+	    expose:
+	      - "9200"
+	    ports:
+	      - "9200:9200"
+	      - "5601:5601"
+	    environment:
+	      - SERVICE_9200_NAME= primary_elasticsearch
+	      - SERVICE_5601_NAME= primary_kibana
+	      - ELASTICSEARCH_URL=http://elasticsearch:9200
+	    links:
+	      - consul
+#
+# Service Discovery - Consul
+#
+  consul:
+    command: -server -bootstrap -advertise $DOCKER_IP -ui-dir /ui
+    image: progrium/consul:latest
+    ports:
+    - "8300:8300"
+    - "8301:8301"
+    - "8400:8400"
+    - "8500:8500"
+    - "8600:53/udp"
+  #
+  # Service Discovery - Registrator
+  #
+  registrator:
+    command: -ip=$DOCKER_IP consul://consul:8500
+    image: gliderlabs/registrator:latest
+    links:
+    - consul
+    environment:
+    - SERVICE_8500_NAME= consul
+    volumes:
+    - "/var/run/docker.sock:/tmp/docker.sock"

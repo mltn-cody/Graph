@@ -1,0 +1,77 @@
+Create(able:Root {Meanings:['able to'], Examples:['edible','salable'], Origin: 'Latin', Definitions: ['able to be eaten','able to be sold'] })
+
+Create(ible:Root {Meanings:['able to'], Examples:['edible','salable'], Origin: 'Latin', Definitions: ['able to be eaten','able to be sold'] })
+
+Create(ble:Root {Meanings:['able to'], Examples:['edible','salable'], Origin: 'Latin', Definitions: ['able to be eaten','able to be sold'] })
+
+Create(acious:Root {Meanings:['like','having the quality of'], Examples:['nocturnal','vivacious'], Origin: 'Latin', Definitions: ['of the night','having the quality of being lively'] })
+
+Create(cous:Root {Meanings:['like','having the quality of'], Examples:['nocturnal','vivacious'], Origin: 'Latin', Definitions: ['of the night','having the quality of being lively'] })
+
+Create(al:Root {Meanings:['like','having the quality of'], Examples:['nocturnal','vivacious'], Origin: 'Latin', Definitions: ['of the night','having the quality of being lively'] })
+
+Create(ance:Root {Meanings:['the act of','a state of being'], Examples:['performance','truancy'], Origin: 'Latin', Definitions: ['the act of performing','the act of being truant'] })
+
+Create(ancy:Root {Meanings:['the act of','a state of being'], Examples:['performance','truancy'], Origin: 'Latin', Definitions: ['the act of performing','the act of being truant'] })
+
+Create(ant:Root {Meanings:['one who'], Examples:['occupant','respondent','teacher','creator'], Origin: 'Latin', Definitions: ['one who occupies','one who responds or answers', 'one who teaches','one who creators'] })
+
+Create(ent:Root {Meanings:['one who'], Examples:['occupant','respondent','teacher','creator'], Origin: 'Latin', Definitions: ['one who occupies','one who responds or answers', 'one who teaches','one who creators'] })
+
+Create(er:Root {Meanings:['one who'], Examples:['occupant','respondent','teacher','creator'], Origin: 'Latin', Definitions: ['one who occupies','one who responds or answers', 'one who teaches','one who creators'] })
+
+Create(or:Root {Meanings:['one who'], Examples:['occupant','respondent','teacher','creator'], Origin: 'Latin', Definitions: ['one who occupies','one who responds or answers', 'one who teaches','one who creators'] })
+
+Create(ar:Root {Meanings:['connected with','related to'], Examples:['ocular','beneficiary'], Origin: 'Latin', Definitions: ['related to the eye','connected with one who receives benefits'] })
+
+Create(ay:Root {Meanings:['connected with','related to'], Examples:['ocular','beneficiary'], Origin: 'Latin', Definitions: ['related to the eye','connected with one who receives benefits'] })
+
+Create(ence:Root {Meanings:['quality of','act of'], Examples:['existence'], Origin: 'Latin', Definitions: ['the act of existing or being'] })
+
+Create(ful:Root {Meanings:['full of'], Examples:['fearful'], Origin: 'Latin', Definitions: ['full of fear'] })
+
+Create(ic:Root {Meanings:['of','like','partaining to'], Examples:['cardiac','civil','infantile','acidic'], Origin: 'Latin', Definitions: ['partaining to the heart','pertaining to citizens','pertaining to infants','like acid'] })
+
+Create(ac:Root {Meanings:['of','like','partaining to'], Examples:['cardiac','civil','infantile','acidic'], Origin: 'Latin', Definitions: ['partaining to the heart','pertaining to citizens','pertaining to infants','like acid'] })
+
+Create(il:Root {Meanings:['of','like','partaining to'], Examples:['cardiac','civil','infantile','acidic'], Origin: 'Latin', Definitions: ['partaining to the heart','pertaining to citizens','pertaining to infants','like acid'] })
+
+Create(ile:Root {Meanings:['of','like','partaining to'], Examples:['cardiac','civil','infantile','acidic'], Origin: 'Latin', Definitions: ['partaining to the heart','pertaining to citizens','pertaining to infants','like acid'] })
+
+Create(ion:Root {Meanings:['the act or condition of'], Examples:['correction'], Origin: 'Latin', Definitions: ['the act of correction'] })
+
+Create(ism:Root {Meanings:['the practice of','support of'], Examples:['patriotism'], Origin: 'Latin', Definitions: ['suppor of one's country'] })
+
+Create(ist:Root {Meanings:['one who makes','does'], Examples:['artist'], Origin: 'Latin', Definitions: ['one who creates art'] })
+
+Create(ity:Root {Meanings:['the state of','character of'], Examples:['unity','shifity','showy'], Origin: 'Latin', Definitions: ['the state of being one','state of shifting around','state of always showing oneself'] })
+
+Create(ty:Root {Meanings:['the state of','character of'], Examples:['unity','shifity','showy'], Origin: 'Latin', Definitions: ['the state of being one','state of shifting around','state of always showing oneself'] })
+
+Create(y:Root {Meanings:['the state of','character of'], Examples:['unity','shifity','showy'], Origin: 'Latin', Definitions: ['the state of being one','state of shifting around','state of always showing oneself'] })
+
+Create(ive:Root {Meanings:['having the nature of'], Examples:['active'], Origin: 'Latin', Definitions: ['having the nature of acting or moving'] })
+
+Create(less:Root {Meanings:['lacking','without'], Examples:['heartless'], Origin: 'Latin', Definitions: ['without a heart'] })
+
+Create(logy:Root {Meanings:['the study of'], Examples:['biology'], Origin: 'Latin', Definitions: ['the study of life processes'] })
+
+Create(ment:Root {Meanings:['the act of','the state of'], Examples:['retirement'], Origin: 'Latin', Definitions: ['state of being retired'] })
+
+Create(ness:Root {Meanings:['the quality of'], Examples:['eagerness'], Origin: 'Latin', Definitions: ['the quality of being eager'] })
+
+Create(ory:Root {Meanings:['having the nature of','a place or thing for'], Examples:['laboratory'], Origin: 'Latin', Definitions: ['a place where work is done'] })
+
+Create(ous:Root {Meanings:['full of','having'], Examples:['dangerous','verbose'], Origin: 'Latin', Definitions: ['full of danger','full of words, or wordy'] })
+
+Create(ose:Root {Meanings:['full of','having'], Examples:['dangerous','verbose'], Origin: 'Latin', Definitions: ['full of danger','full of words, or wordy'] })
+
+Create(ship:Root {Meanings:['the art or skill of','the ability to'], Examples:['leadership'], Origin: 'Latin', Definitions: ['the ability to lead'] })
+
+Create(some:Root {Meanings:['full of','like'], Examples:['troublesome'], Origin: 'Latin', Definitions: ['full of trouble'] })
+
+Create(tude:Root {Meanings:['the state of quality of','the ability to'], Examples:['aptitude'], Origin: 'Latin', Definitions: ['the ability to do'] })
+
+Create(y:Root {Meanings:['full of','somewhat','somewhat like'], Examples:['musty', 'chilly','willowy'], Origin: 'Latin', Definitions: ['having a stale odor','somewhat cold','like a willow'] })
+
+

@@ -1,0 +1,112 @@
+
+
+Create(a:Prefix {Meanings:['away from'], Origin: '', Examples: ['absent', 'abscond'],  Definitions: ['not to be present, away', 'abscond - to run away'] })
+
+Create(ad:Prefix {Meanings:['to', 'toward'], Origin: '', Examples: ['adapt', 'adhere', 'annex', 'attract'], Definitions: ['to fit into', 'to stick to', 'to add or join', 'to draw near'] })
+
+Create(a:Prefix {Meanings:['to', 'toward'], Origin: '', Examples: ['adapt', 'adhere', 'annex', 'attract'], Definitions: ['to fit into', 'to stick to', 'to add or join', 'to draw near'] })
+
+Create(ac:Prefix {Meanings:['to', 'toward'], Origin: '', Examples: ['adapt', 'adhere', 'annex', 'attract'], Definitions: ['to fit into', 'to stick to', 'to add or join', 'to draw near'] })
+
+Create(af:Prefix {Meanings:['to', 'toward'], Origin: '', Examples: ['adapt', 'adhere', 'annex', 'attract'], Definitions: ['to fit into', 'to stick to', 'to add or join', 'to draw near'] })
+
+Create(ag:Prefix {Meanings:['to', 'toward'], Origin: '', Examples: ['adapt', 'adhere', 'annex', 'attract'], Definitions: ['to fit into', 'to stick to', 'to add or join', 'to draw near'] })
+
+Create(an:Prefix {Meanings:['to', 'toward'], Origin: '', Examples: ['adapt', 'adhere', 'annex', 'attract'], Definitions: ['to fit into', 'to stick to', 'to add or join', 'to draw near'] })
+
+Create(ar:Prefix {Meanings:['to', 'toward'], Origin: '', Examples: ['adapt', 'adhere', 'annex', 'attract'], Definitions: ['to fit into', 'to stick to', 'to add or join', 'to draw near'] })
+
+Create(at:Prefix {Meanings:['to', 'toward'], Origin: '', Examples: ['adapt', 'adhere', 'annex', 'attract'], Definitions: ['to fit into', 'to stick to', 'to add or join', 'to draw near'] })
+
+Create(as:Prefix {Meanings:['to', 'toward'], Origin: '', Examples: ['adapt', 'adhere', 'annex', 'attract'], Origin: '', Definitions: ['to fit into', 'to stick to', 'to add or join', 'to draw near'] })
+
+Create(anti:Prefix {Meanings:['against'], Origin: '', Examples: ['antifreeze', 'antisocial'], Definitions: ['a substance to prevent freezing', 'refers to someone who's not social'] })
+
+Create(bi:Prefix {Meanings:['two'], Origin: '', Examples: ['bicycle', 'biannual', 'biennial'], Definitions: ['two wheeled cycle', 'twice each year', 'every two years']})
+
+Create(bis:Prefix {Meanings:['two'], Origin: '', Examples: ['bicycle', 'biannual', 'biennial'], Definitions: ['two wheeled cycle', 'twice each year', 'every two years']}) 
+
+Create(circum:Prefix {Meanings: ['around'], Origin: '', Examples: ['circumscribe'], Definitions: ['to draw around', 'a figure that goes all around'] })
+
+Create(cir:Prefix {Meanings: ['around'], Origin: '', Examples: ['circle'], Definitions: ['to draw around', 'a figure that goes all around'] })
+
+Create(com:Prefix {Meanings: ['with', 'together'], Origin: '', Examples: ['combine'], Definitions: ['to bring together', 'to touch together']})
+
+Create(con:Prefix {Meanings: ['with', 'together'], Origin: '', Examples: ['connect'], Definitions: ['to bring together', 'to touch together']})
+
+Create(co:Prefix {Meanings: ['with', 'together'], Origin: '', Examples: ['co-worker'], Definitions: ['to bring together', 'to touch together']})
+
+Create(col:Prefix {Meanings: ['with', 'together'], Origin: '', Examples: ['collect'], Definitions: ['to bring together', 'to touch together']})
+
+Create(de:Prefix {Meanings: ['away from', 'down', 'the opposite of'], Origin: '', Examples: ['depart', 'decline'], Definitions: ['to bring together', 'to touch together'] })
+
+Create(dis:Prefix {Meanings: ['apart'], Origin: '', Examples: ['dislike', 'dishonest', 'distant'], Definitions: ['not to like', 'not honest', 'away'] })
+
+Create(dif:Prefix {Meanings: ['apart'], Origin: '', Examples: ['dislike', 'dishonest', 'distant'], Definitions: ['not to like', 'not honest', 'away'] })
+
+Create(di:Prefix {Meanings: ['apart'], Origin: '', Examples: ['dislike', 'dishonest', 'distant'], Definitions: ['not to like', 'not honest', 'away'] })
+
+Create(epi:Prefix {Meanings: ['upon', 'on top of'], Origin: '', Examples: ['epitaph', 'epilogue'], Definitions: ['writing upon a tombstone', 'speech at the end, on top of the rest'] })
+
+Create(equ:Prefix {Meanings: ['equal'], Origin: '', Examples: ['equalize', 'equitable'], Definitions:['to make equal', 'fair, equal'] })
+
+Create(equi:Prefix {Meanings: ['equal'], Origin: '', Examples: ['equalize', 'equitable'], Definitions: ['to make equal', 'fair, equal'] })
+
+Create(ex:Prefix {Meanings: ['out', 'from'], Origin: '', Examples: ['exit', 'eject', 'exhale'], Definitions: ['to go out', 'to throw out', 'to breathe out'] })
+
+Create(e:Prefix {Meanings: ['out', 'from'], Origin: '', Examples: ['exit', 'eject', 'exhale'], Definitions: ['to go out', 'to throw out', 'to breathe out'] })
+
+Create(ef:Prefix {Meanings: ['out', 'from'], Origin: '', Examples: ['exit', 'eject', 'exhale'], Definitions: ['to go out', 'to throw out', 'to breathe out'] })
+
+Create(in:Prefix {Meanings: ['in', 'into'], Origin: '', Examples: ['inject', 'impose'], Definitions: ['to put into', 'to force into'] })
+
+Create(il:Prefix {Meanings: ['in', 'into'], Origin: '', Examples: ['inject', 'impose'], Definitions: ['to put into', 'to force into'] })
+
+Create(ir:Prefix {Meanings: ['in', 'into'], Origin: '', Examples: ['inject', 'impose'], Definitions: ['to put into', 'to force into'] })
+
+Create(im:Prefix {Meanings: ['in', 'into'], Origin: '', Examples: ['inject', 'impose'], Definitions: ['to put into', 'to force into'] })
+
+Create(en:Prefix {Meanings: ['in', 'into'], Origin: '', Examples: ['inject', 'impose'], Definitions: ['to put into', 'to force into'] })
+
+Create(inter:Prefix {Meanings: ['between','among'], Origin: 'Latin', Examples: ['international','interpose'], Definitions: ['among nations', 'to put between'] })
+
+Create(mal:Prefix {Meanings: ['bad','ill','wrong'], Origin: 'Latin', Examples: ['malpractice', 'malfunction'], Definitions: ['bad practice', 'fail to function', 'bad function'] })
+
+Create(male:Prefix {Meanings: ['bad','ill','wrong'], Origin: 'Latin', Examples: ['malpractice', 'malfunction'], Definitions: ['bad practice', 'fail to function', 'bad function'] })
+
+Create(mis:Prefix {Meanings: ['wrong', 'badly'], Origin: 'Old English', Examples: ['mistreat','mistake','misplace'], Definitions: ['to treat badly', 'to get wrong', 'to put in wrong place'] })
+
+Create(mono:Prefix {Meanings: ['one', 'alone', 'single'], Origin: 'Greek', Examples: ['monopoly', 'monotone', 'monologue', 'monosyllable'], Definitions: ['one ownership', 'one note', 'speech by one person', 'one syllable'] })
+
+Create(non:Prefix {Meanings: ['not', 'the reverse of'], Origin: 'Latin', Examples: ['nonsense', 'nonprofit'], Definitions: ['not making sense', 'not making a profit'] })
+
+Create(ob:Prefix {Meanings: ['in front', 'against', 'in front of', 'in the way of'], Origin: 'Latin', Examples: ['obstacle', 'obvious', 'obviate'], Definitions: ['something that stands in the way of', 'right in front of, apparent', 'to do away with, make unecessary'] })
+
+Create(omni:Prefix {Meanings: ['everywhere','all'], Origin: 'Latin', Examples: ['omnipresent', 'omnipotent'], Definitions: ['alway present, everywhere', 'all powerful'] })
+
+Create(per:Prefix {Meanings: ['through'], Origin: 'Latin', Examples: ['pervade','perceive'], Definitions: ['to pass through, to spread through', 'to become aware throught sight'] })
+
+Create(poly:Prefix {Meanings: ['many'], Origin: 'Latin', Examples: ['polysyllable', 'polygon'], Definitions: ['many syllables', 'figure with many sides'] })
+
+Create(post:Prefix {Meanings: ['after'], Origin: 'Latin', Examples: ['postpone', 'postmortem'], Definitions: ['to do after', 'after death'] })
+
+Create(pre:Prefix {Meanings: ['before', 'earlier than'], Origin: 'Latin', Examples: ['preview', 'prehistoric', 'preface'], Definitions: ['a viewing earlier than another', 'before written history', 'a statement before an article or book'] })
+
+Create(pro:Prefix {Meanings: ['forward', 'going ahead of', 'supporting'], Origin: 'Latin', Examples: ['proceed', 'prowar','promote'], Definitions: ['to go forward', 'supporting the war', 'to raise or move forward'] })
+
+Create(re:Prefix {Meanings: ['again', 'back'], Origin: 'Latin', Examples: ['retell','recall','recede'], Definitions: ['to tell again', 'to call back', 'to go back'] })
+
+Create(se:Prefix {Meanings: ['apart'], Origin: 'Latin', Examples: ['secede','seclude'], Definitions: ['to withdraw, 'become apart', 'to stay apart from others'] })
+
+Create(sub:Prefix {Meanings: ['under', 'less than'], Origin: 'Latin', Examples: ['submarine','subway','subliminal'], Definitions: ['underwater','a path or way to move under ground', 'below the level of consciousness'] })
+
+Create(super:Prefix {Meanings: ['over','above','greater'], Origin: 'Latin', Examples: ['superstar','superimpose'], Definitions: ['a star greater then other stars', 'to pub over something else'] })
+
+Create(trans:Prefix {Meanings: ['across'], Origin: 'Latin', Examples: ['transcontinental', 'transverse'], Definitions: ['across the continent', 'to lie or go across'] })
+
+Create(un:Prefix {Meanings: ['one'], Origin: 'Latin', Examples: ['unidirectional','unanimous','unilateral'], Definitions: ['having one direction','sharing one view', 'having one side'] })
+
+Create(uni:Prefix {Meanings: ['one'], Origin: 'Latin', Examples: ['unidirectional','unanimous','unilateral'], Definitions: ['having one direction','sharing one view', 'having one side'] })
+
+Create(un:Prefix {Meanings: ['no'], Origin: 'Latin', Examples: ['uninterested', 'unhelpful','unethical'], Definitions: ['not interested', 'not helpful', 'not ethical'] })
+

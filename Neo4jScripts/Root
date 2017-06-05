@@ -1,0 +1,124 @@
+Create(act:Root {Meanings:['to do', 'to act'], Origin: '', Examples: ['agent', 'activity'], Definitions: ['One who acts as a representative', 'Action'] })
+
+Create(apert:Root {Meanings:['open'], Origin: '', Examples: ['aperture'], Definitions: ['An opening'] })
+
+Create(bas:Root {Meanings:['low'], Origin: '', Examples: ['basement', 'basement'], Definitions: ['something that is low, at the bottom', 'a romm that is low'] })
+
+Create(cap:Root {Meanings:['to take', 'to hold', 'to seize'], Origin: '', Examples: ['captive', 'receive', 'capable', 'recipient'], Definitions: ['one who is held', 'to take', 'able to take hold of things', 'one who takes hold or receives'] })
+
+Create(capt:Root {Meanings:['to take', 'to hold', 'to seize'], Origin: '', Examples: ['captive', 'receive', 'capable', 'recipient'], Definitions: ['one who is held', 'to take', 'able to take hold of things', 'one who takes hold or receives'] })
+
+Create(cip:Root {Meanings:['to take', 'to hold', 'to seize'], Origin: '', Examples: ['captive', 'receive', 'capable', 'recipient'], Definitions: ['one who is held', 'to take', 'able to take hold of things', 'one who takes hold or receives'] })
+
+Create(cept:Root {Meanings:['to take', 'to hold', 'to seize'], Origin: '', Examples: ['captive', 'receive', 'capable', 'recipient'], Definitions: ['one who is held', 'to take', 'able to take hold of things', 'one who takes hold or receives'] })
+
+Create(ceive:Root {Meanings:['to take', 'to hold', 'to seize'], Origin: '', Examples: ['captive', 'receive', 'capable', 'recipient'], Definitions: ['one who is held', 'to take', 'able to take hold of things', 'one who takes hold or receives'] })
+
+Create(ced:Root {Meanings:['to go','to give in'], Origin: '', Examples: ['Precede', 'Access', 'Proceed'], Definitions: ['To go before', 'Means of going to', 'To go forward'] })
+
+Create(cede:Root {Meanings:['to go','to give in'], Origin: '', Examples: ['Precede', 'Access', 'Proceed'], Definitions: ['To go before', 'Means of going to', 'To go forward'] })
+
+Create(ceed:Root {Meanings:['to go','to give in'], Origin: '', Examples: ['Precede', 'Access', 'Proceed'], Definitions: ['To go before', 'Means of going to', 'To go forward'] })
+
+Create(cess:Root {Meanings:['to go','to give in'], Origin: '', Examples: ['Precede', 'Access', 'Proceed'], Definitions: ['To go before', 'Means of going to', 'To go forward'] })
+
+Create(cred:Root {Meanings:['to believe'], Origin: '', Examples: ['credible', 'incredible', 'credit'], Definitions: ['believable', 'not believable', 'belief, trust'] })
+
+Create(credit:Root {Meanings:['to believe'], Origin: '', Examples: ['credible', 'incredible', 'credit'], Definitions: ['believable', 'not believable', 'belief, trust'] })
+
+Create(curr:Root {Meanings:['to run'], Origin: '', Examples: ['current', 'precursor', 'recourse'], Definitions: ['now in progress, running', 'running (going) before', 'to run for aid'] })
+
+Create(curs:Root {Meanings:['to run'], Origin: '', Examples: ['current', 'precursor', 'recourse'], Definitions: ['now in progress, running', 'running (going) before', 'to run for aid'] })
+
+Create(cours:Root {Meanings:['to run'], Origin: '', Examples: ['current', 'precursor', 'recourse'], Definitions: ['now in progress, running', 'running (going) before', 'to run for aid'] })
+
+Create(dic:Root {Meanings:['to say'], Origin: '', Examples: ['dictionary', 'indict', 'indicate'], Definitions: ['a book explaining words (sayings)', 'to say or make an accusation', 'to point out or say by demonstrating'] })
+
+Create(dict:Root {Meanings:['to say'], Origin: '', Examples: ['dictionary', 'indict', 'indicate'], Definitions: ['a book explaining words (sayings)', 'to say or make an accusation', 'to point out or say by demonstrating'] })
+
+Create(duc:Root {Meanings:['to lead'], Origin: '', Examples: ['induce', 'conduct', 'aqueduct'], Definitions: ['to lead to action', 'to lead or guide', 'pipe that leads water somewhere'] })
+
+Create(duct:Root {Meanings:['to lead'], Origin: '', Examples: ['induce', 'conduct', 'aqueduct'], Definitions: ['to lead to action', 'to lead or guide', 'pipe that leads water somewhere'] })
+
+Create(equ:Root {Meanings:['equal','even'], Origin: '', Examples: ['equality','equanimity'], Definitions: ['equal in social, political rights', 'evenness of mind, tranquility'] })
+
+Create(fac:Root {Meanings:['to make', 'to do'], Origin: '', Examples: ['facile','fiction','factory','affect'], Definitions: ['easy to do','something that is made up','place that makes things','to make a change'] })
+
+Create(fact:Root {Meanings:['to make', 'to do'], Origin: '', Examples: ['facile','fiction','factory','affect'], Definitions: ['easy to do','something that is made up','place that makes things','to make a change'] })
+
+Create(fic:Root {Meanings:['to make', 'to do'], Origin: '', Examples: ['facile','fiction','factory','affect'], Definitions: ['easy to do','something that is made up','place that makes things','to make a change'] })
+
+Create(fect:Root {Meanings:['to make', 'to do'], Origin: '', Examples: ['facile','fiction','factory','affect'], Definitions: ['easy to do','something that is made up','place that makes things','to make a change'] })
+
+Create(fy:Root {Meanings:['to make', 'to do'], Origin: '', Examples: ['facile','fiction','factory','affect'], Definitions: ['easy to do','something that is made up','place that makes things','to make a change'] })
+
+Create(fer:Root {Meanings:['to carry', 'bring'], Origin: '', Examples: ['defer','referral'], Definitions: ['to carry away','bring a source for help/information'] })
+
+Create(ferr:Root {Meanings:['to carry', 'bring'], Origin: '', Examples: ['defer','referral'], Definitions: ['to carry away','bring a source for help/information'] })
+
+Create(graph:Root {Meanings:['write'], Origin: '', Examples: ['monograph','graphite'], Definitions: ['a writing on a particular subject', 'a form of carbon used for writing'] })
+
+Create(mit:Root {Meanings:['to send'], Origin: '', Examples: ['admit','missile'], Definitions: ['to send in','something sent through the air'] })
+
+Create(mis:Root {Meanings:['to send'], Origin: '', Examples: ['admit','missile'], Definitions: ['to send in','something sent through the air'] })
+
+Create(par:Root {Meanings:['equal'], Origin: '', Examples: ['parity','disparate'], Definitions: ['equality','not equal, not alike'] })
+
+Create(plic:Root {Meanings:['to fold','to bend','to turn'], Origin: '', Examples: ['complicate','implicate'], Definitions: ['to fold (mix) together', 'to fold in, to involve'] })
+
+Create(pon:Root {Meanings:['to place'], Origin: '', Examples: ['component','transpose','compose','deposit'], Definitions: ['a part placed together with others','a place across','to put many parts into place','to place for safekeeping'] })
+
+Create(pos:Root {Meanings:['to place'], Origin: '', Examples: ['component','transpose','compose','deposit'], Definitions: ['a part placed together with others','a place across','to put many parts into place','to place for safekeeping'] })
+
+Create(posit:Root {Meanings:['to place'], Origin: '', Examples: ['component','transpose','compose','deposit'], Definitions: ['a part placed together with others','a place across','to put many parts into place','to place for safekeeping'] })
+
+Create(pose:Root {Meanings:['to place'], Origin: '', Examples: ['component','transpose','compose','deposit'], Definitions: ['a part placed together with others','a place across','to put many parts into place','to place for safekeeping'] })
+
+Create(scrib:Root {Meanings:['to write'], Origin: '', Examples: ['describe','transcript','subscription'], Definitions: ['to write about or tell about','a written copy', 'a written signature or document'] })
+
+Create(script:Root {Meanings:['to write'], Origin: '', Examples: ['describe','transcript','subscription'], Definitions: ['to write about or tell about','a written copy', 'a written signature or document'] })
+
+Create(sequ:Root {Meanings:['to follow'], Origin: '', Examples: ['sequence','sequel','consecutive'], Definitions: ['in following order','a second, following, book','one that follows another'] })
+
+Create(secu:Root {Meanings:['to follow'], Origin: '', Examples: ['sequence','sequel','consecutive'], Definitions: ['in following order','a second, following, book','one that follows another'] })
+
+Create(secu:Root {Meanings:['to follow'], Origin: '', Examples: ['sequence','sequel','consecutive'], Definitions: ['in following order','a second, following, book','one that follows another'] })
+
+Create(spec:Root {Meanings:['to appear','to look','to see'], Origin: '', Examples: ['specimen','aspect'], Definitions: ['an example to look at', 'one that follows another'] })
+
+Create(spect:Root {Meanings:['to appear','to look','to see'], Origin: '', Examples: ['specimen','aspect'], Definitions: ['an example to look at', 'one that follows another'] })
+
+Create(spic:Root {Meanings:['to appear','to look','to see'], Origin: '', Examples: ['specimen','aspect'], Definitions: ['an example to look at', 'one that follows another'] })
+
+Create(sta:Root {Meanings:['to stand','to make stand'], Origin: 'Latin', Examples: ['an example to look at','one way to see something'], Definitions: ['standing with'] })
+
+Create(stat:Root {Meanings:['to stand','to make stand'], Origin: 'Latin', Examples: ['an example to look at','one way to see something'], Definitions: ['standing with'] })
+
+Create(sist:Root {Meanings:['to stand','to make stand'], Origin: 'Latin', Examples: ['an example to look at','one way to see something'], Definitions: ['standing with'] })
+
+Create(stit:Root {Meanings:['to stand','to make stand'], Origin: 'Latin', Examples: ['an example to look at','one way to see something'], Definitions: ['standing with'] })
+
+Create(sisto:Root {Meanings:['to stand','to make stand'], Origin: 'Latin', Examples: ['an example to look at','one way to see something'], Definitions: ['standing with'] })
+
+Create(tact:Root {Meanings:['to touch'], Origin: 'Latin', Examples: ['contact', 'tactile'], Definitions: ['to touch together','to be able to be touched'] })
+
+Create(ten:Root {Meanings:['to hold'], Examples:['tenable','retentive','maintain'], Origin: 'Latin', Definitions: ['able to be held', 'holding','to keep or hold up'] })
+
+Create(tent:Root {Meanings:['to stretch'], Examples:['tenable','retentive','maintain'], Origin: 'Latin', Definitions: ['able to be held', 'holding','to keep or hold up'] })
+
+Create(tain:Root {Meanings:['to stretch'], Examples:['tenable','retentive','maintain'], Origin: 'Latin', Definitions: ['able to be held', 'holding','to keep or hold up'] })
+
+Create(tend:Root {Meanings:['to stretch'], Examples:['tenable','retentive','maintain'], Origin: 'Latin', Definitions: ['able to be held', 'holding','to keep or hold up'] })
+
+Create(tract:Root {Meanings:['to draw'], Examples:['attract','contract'], Origin: 'Latin', Definitions: ['to draw together','an agreement drawn up'] })
+
+Create(ven:Root {Meanings:['to come'], Examples:['convene', 'advent'], Origin: 'Latin', Definitions: ['to come together', 'a coming'] })
+
+Create(vent:Root {Meanings:['to come'], Examples:['convene', 'advent'], Origin: 'Latin', Definitions: ['to come together', 'a coming'] })
+
+Create(ver:Root {Meanings:['to turn'], Examples:['aver', 'revert', 'reverse'], Origin: 'Latin', Definitions: ['to turn away', 'to turn back'] })
+
+Create(vert:Root {Meanings:['to turn'], Examples:['aver', 'revert', 'reverse'], Origin: 'Latin', Definitions: ['to turn away', 'to turn back'] })
+
+Create(vers:Root {Meanings:['to turn'], Examples:['aver', 'revert', 'reverse'], Origin: 'Latin', Definitions: ['to turn away', 'to turn back'] })
+
