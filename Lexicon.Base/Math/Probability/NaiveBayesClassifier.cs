@@ -4,9 +4,50 @@ using System.Linq;
 using Castle.Core.Internal;
 using Lexicon.Base.Attributes;
 using Lexicon.Base.Extensions;
+using System.Data;
 
 namespace Lexicon.Base.Math.Probability
 {
+    public class Classifier<T> {
+        private readonly decimal[] _priors;
+        private readonly T[] _dataset;
+        private readonly Func<T, bool>[] _catagoryDefinitions;
+        private readonly Dictionary<string, Func<T, bool>> _binDefinitions;
+        private bool _useLaplacianSmoothing;
+
+        public Classifier(IEnumerable<T> dataset, bool withLaplacian = true, params Func<T, bool>[] catagoryDefinitions){
+            if (dataset == null || !dataset.Any()) throw new ArgumentException();
+            _catagoryDefinitions = catagoryDefinitions ?? throw new ArgumentNullException(nameof(catagoryDefinitions));
+            _priors = new decimal[catagoryDefinitions.Length];
+            _dataset = dataset as T[] ?? dataset.ToArray();
+            _useLaplacianSmoothing = withLaplacian;
+        }
+
+        public void TrainClassifier() {
+            DataTable GaussianDistribution = new DataTable("Gaussian");
+
+            GaussianDistribution.Columns.Add("Propery Name");
+            GaussianDistribution.Columns.Add("Mean");
+            GaussianDistribution.Columns.Add("Variance");
+
+            var properties = typeof(T).GetProperties();
+            var firstItem = _dataset.First();
+
+            // calc data 
+            //var result = (from myRow in _dataset 
+            //              group myRow by myRow.GetType) into g
+            //              select new {}
+
+        }
+
+        public string Classify(double[] obj) {
+            return null;
+        }
+    }
+
+
+
+    // TODO: Improve the interface here. 
     /// <summary>
     /// Determine Probability of Y given different catagory options  
     /// </summary>
@@ -40,9 +81,7 @@ namespace Lexicon.Base.Math.Probability
         public NaiveBayesClassifier(IEnumerable<T> dataset, bool withLaplacian = true, params Func<T, bool>[] catagoryDefinitions) 
         {
             if(dataset == null || !dataset.Any()) throw new ArgumentException();
-            if(catagoryDefinitions == null) throw new ArgumentNullException(nameof(catagoryDefinitions));
-
-            _catagoryDefinitions = catagoryDefinitions;
+            _catagoryDefinitions = catagoryDefinitions ?? throw new ArgumentNullException(nameof(catagoryDefinitions));
             _priors = new decimal[catagoryDefinitions.Length];
             _dataset = dataset as T[] ?? dataset.ToArray();
             _useLaplacianSmoothing = withLaplacian;
