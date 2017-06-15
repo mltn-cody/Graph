@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Lexicon.Base.Math.Probability
 {
-    public class Classifier<T> {
+    public class Classifier<T> where T: IClassifiable {
         private readonly decimal[] _priors;
         private readonly T[] _dataset;
         private readonly Func<T, bool>[] _catagoryDefinitions;
@@ -34,9 +34,17 @@ namespace Lexicon.Base.Math.Probability
             var firstItem = _dataset.First();
 
             // calc data 
-            //var result = (from myRow in _dataset 
-            //              group myRow by myRow.GetType) into g
-            //              select new {}
+            var result = (from myRow in _dataset
+                          group myRow by myRow.GetType().) into g
+                          select new { Name = g.Key, Count = g.Count() }).ToList();
+
+            for (int j = 0; j < results.Count; j++) {
+                var row = GaussianDistribution.Rows.Add();
+                row[0] = results[j].Name;
+
+                int a = 1;
+                for(int i =1; i< )
+            }
 
         }
 

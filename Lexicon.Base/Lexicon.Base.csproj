@@ -97,6 +97,7 @@
     <Compile Include="Math\Probability\BinData.cs" />
     <Compile Include="Math\Probability\Category.cs" />
     <Compile Include="Math\Probability\ICatagory.cs" />
+    <Compile Include="Math\Probability\IClassifiable.cs" />
     <Compile Include="Math\Probability\NaiveBayesClassifier.cs" />
     <Compile Include="Math\Probability\ProbablityWeight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
