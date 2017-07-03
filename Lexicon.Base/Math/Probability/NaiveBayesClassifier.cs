@@ -6,25 +6,34 @@ using Lexicon.Base.Attributes;
 using Lexicon.Base.Extensions;
 using System.Data;
 using FastMember;
+using Lexicon.Base.Math.Extensions;
 using Lexicon.Base.Math.Probability;
 
 namespace Lexicon.Base.Math.Probability
 {
-    public class Classifier<T> where T : IClassifiable
+    public class Classifier<T> where T : IClassifiable, new()
     {
         private readonly decimal[] _priors;
         private readonly T[] _dataset;
-        private readonly Func<T, bool>[] _catagoryDefinitions;
         private readonly Dictionary<string, Func<T, bool>> _binDefinitions;
         private bool _useLaplacianSmoothing;
 
-        public Classifier(IEnumerable<T> dataset, bool withLaplacian = true, params Func<T, bool>[] catagoryDefinitions)
+        public Classifier(IEnumerable<T> dataset, bool withLaplacian = true)
         {
             if (dataset == null || !dataset.Any()) throw new ArgumentException();
-            _catagoryDefinitions = catagoryDefinitions ?? throw new ArgumentNullException(nameof(catagoryDefinitions));
-            _priors = new decimal[catagoryDefinitions.Length];
+            _priors = new decimal[typeof(T).GetProperties().Length];
             _dataset = dataset as T[] ?? dataset.ToArray();
             _useLaplacianSmoothing = withLaplacian;
+        }
+
+        public Classifier()
+        {
+            _dataset = new T[10];
+
+            for (var i = 0; i < _dataset.Length; i++)
+            {
+                _dataset[i] = new T();
+            }
         }
 
         public void TrainClassifier()
@@ -34,9 +43,6 @@ namespace Lexicon.Base.Math.Probability
             GaussianDistribution.Columns.Add("Propery Name");
             GaussianDistribution.Columns.Add("Mean");
             GaussianDistribution.Columns.Add("Variance");
-
-            var properties = typeof(T).GetProperties();
-            var firstItem = _dataset.First();
 
             var dataSetAsTable = new DataTable();
             using (var reader = ObjectReader.Create(_dataset))
@@ -48,12 +54,62 @@ namespace Lexicon.Base.Math.Probability
                           group myRow by myRow.Field<string>(dataSetAsTable.Columns[0].ColumnName) into g
                           select new { Name = g.Key, Count = g.Count() }).ToList();
 
+            foreach (var @group in results)
+            {
+                var row = GaussianDistribution.Rows.Add();
+                row[0] = @group.Name;
+
+                var a = 1;
+                for (var i = 1; i < dataSetAsTable.Columns.Count; i++)
+                {
+                    row[a] = SelectRows(dataSetAsTable, i,
+                        $"{dataSetAsTable.Columns[0].ColumnName} = '{@group.Name}'").Mean();
+                    row[++a] = SelectRows(dataSetAsTable, i,
+                        $"{dataSetAsTable.Columns[0].ColumnName} = '{@group.Name}'").Variance();
+                    a++;
+                }
+            }
+
 
         }
 
-        public string Classify(double[] obj)
+        public string Classify(T obj)
         {
+            Dictionary<string, double> score = new Dictionary<string, double>();
             return null;
+        }
+
+        /// TODO: I would like to know what properties are being catagorized? 
+        public IEnumerable<BinData> GetBins()
+        {
+            // Steps - you'd have to go through the assembly or language,
+            // get the items and the properties decoorated with the bin attribute. 
+
+            // If using neo4j you're going to return a json object 
+            // that json will need to be convertable to a c# type to which you can apply your attribute
+            // this won't be known at compile time you're not able to make a c# class for every word 
+            // you have to depend on the data store to return this object and create a generic type.. 
+
+            return
+                typeof(T)
+                    .GetAttributeValues((BinAttribute bin) =>
+                        new BinData()
+                        {
+                            PropertyName = bin.PropertyName,
+                            BinCatagories = bin.BinCatagories
+                        });
+        }
+
+        private IEnumerable<double> SelectRows(DataTable table, int column, string filter)
+        {
+            List<double> _doubleList = new List<double>();
+            DataRow[] rows = table.Select(filter);
+            for (int i = 0; i < rows.Length; i++)
+            {
+                _doubleList.Add((double)rows[i][column]);
+            }
+
+            return _doubleList;
         }
     }
 }
