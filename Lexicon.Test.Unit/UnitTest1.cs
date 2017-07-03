@@ -43,7 +43,7 @@ namespace Lexicon.Test.Unit
         [Test]
         public void OveralProbabilities()
         {
-            var classifierInstance = new NaiveBayesClassifier<Person>(People, true, catagoryDefinitions:);
+            //var classifierInstance = new NaiveBayesClassifier<Person>(People, true, catagoryDefinitions:);
         }
     }
 }

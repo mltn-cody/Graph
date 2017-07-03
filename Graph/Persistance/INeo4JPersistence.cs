@@ -12,5 +12,9 @@ namespace Lexicon.Graph
         Task EnsureLabelExistsAsync<TStorable>() where TStorable : QueryStorable;
     }
 
+    public interface INeo4JGraphClient
+    {
+    }
+
     //OBject relational mappings lets get back to that for minute, that's the enitty framework key you don't want to have that kind of storage. Go Neo4j Directly 
 }

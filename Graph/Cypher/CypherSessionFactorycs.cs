@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Neo4j.Driver.V1;
 
 namespace Lexicon.Graph.Cypher
 {
@@ -13,9 +14,10 @@ namespace Lexicon.Graph.Cypher
             throw new NotImplementedException();
         }
 
-        public ICypherSession Create(ConnectionProperties connectionProperties)
+        public ICypherSession Create(IDriver connectionProperties)
         {
             throw new NotImplementedException();
         }
+
     }
 }

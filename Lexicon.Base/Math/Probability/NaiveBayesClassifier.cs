@@ -5,17 +5,21 @@ using Castle.Core.Internal;
 using Lexicon.Base.Attributes;
 using Lexicon.Base.Extensions;
 using System.Data;
+using FastMember;
+using Lexicon.Base.Math.Probability;
 
 namespace Lexicon.Base.Math.Probability
 {
-    public class Classifier<T> where T: IClassifiable {
+    public class Classifier<T> where T : IClassifiable
+    {
         private readonly decimal[] _priors;
         private readonly T[] _dataset;
         private readonly Func<T, bool>[] _catagoryDefinitions;
         private readonly Dictionary<string, Func<T, bool>> _binDefinitions;
         private bool _useLaplacianSmoothing;
 
-        public Classifier(IEnumerable<T> dataset, bool withLaplacian = true, params Func<T, bool>[] catagoryDefinitions){
+        public Classifier(IEnumerable<T> dataset, bool withLaplacian = true, params Func<T, bool>[] catagoryDefinitions)
+        {
             if (dataset == null || !dataset.Any()) throw new ArgumentException();
             _catagoryDefinitions = catagoryDefinitions ?? throw new ArgumentNullException(nameof(catagoryDefinitions));
             _priors = new decimal[catagoryDefinitions.Length];
@@ -23,7 +27,8 @@ namespace Lexicon.Base.Math.Probability
             _useLaplacianSmoothing = withLaplacian;
         }
 
-        public void TrainClassifier() {
+        public void TrainClassifier()
+        {
             DataTable GaussianDistribution = new DataTable("Gaussian");
 
             GaussianDistribution.Columns.Add("Propery Name");
@@ -33,29 +38,29 @@ namespace Lexicon.Base.Math.Probability
             var properties = typeof(T).GetProperties();
             var firstItem = _dataset.First();
 
+            var dataSetAsTable = new DataTable();
+            using (var reader = ObjectReader.Create(_dataset))
+            {
+                dataSetAsTable.Load(reader);
+            }
             // calc data 
-            var result = (from myRow in _dataset
-                          group myRow by myRow.GetType().) into g
+            var results = (from myRow in dataSetAsTable.AsEnumerable()
+                          group myRow by myRow.Field<string>(dataSetAsTable.Columns[0].ColumnName) into g
                           select new { Name = g.Key, Count = g.Count() }).ToList();
 
-            for (int j = 0; j < results.Count; j++) {
-                var row = GaussianDistribution.Rows.Add();
-                row[0] = results[j].Name;
-
-                int a = 1;
-                for(int i =1; i< )
-            }
 
         }
 
-        public string Classify(double[] obj) {
+        public string Classify(double[] obj)
+        {
             return null;
         }
     }
+}
 
 
 
-    // TODO: Improve the interface here. 
+// TODO: Improve the interface here. 
     /// <summary>
     /// Determine Probability of Y given different catagory options  
     /// </summary>
@@ -135,8 +140,6 @@ namespace Lexicon.Base.Math.Probability
         // TODO create a single result that will give you the probablility of a single result 
         /// <summary>
         /// This method is used to define the probabilites for each catagory,
-        /// 
-        /// I have forgotten why it is that I'm returning a decimal[] array items.
         /// </summary>
         /// <param name="attributeConditionDictionary">
         /// Dictionary of string key which is the attribute property, with its defintion to fit into that catagory. 
@@ -177,4 +180,4 @@ namespace Lexicon.Base.Math.Probability
 
          
     }
-}
+
