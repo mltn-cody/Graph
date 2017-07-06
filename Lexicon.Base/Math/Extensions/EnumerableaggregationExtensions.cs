@@ -5,7 +5,7 @@ namespace Lexicon.Base.Math.Extensions
 {
     using static System.Math;
 
-    public static class EnumerableaggregationExtensions
+    public static class EnumerableAggregationExtensions
     {
         public static double Variance(this IEnumerable<double> source)
         {
@@ -14,6 +14,7 @@ namespace Lexicon.Base.Math.Extensions
             var d = enumerable.Aggregate(0.0, (total, next) => total += Pow(next - avg, 2));
             return d / (enumerable.Count() - 1);
         }
+
 
         public static double Mean(this IEnumerable<double> source)
         {
@@ -26,6 +27,15 @@ namespace Lexicon.Base.Math.Extensions
             return sum / length;
         }
 
+        /// <summary>
+        /// Normal distribution of this interger value but in our case we are are using the 
+        /// group value, string value or occurance count? 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="mean"></param>
+        /// <param name="standard_dev"></param>
+        /// <returns></returns>
+        /// <remarks>https://en.wikipedia.org/wiki/Normal_distribution</remarks>
         public static double NormalDist(double x, double mean, double standard_dev)
         {
             double fact = standard_dev * Sqrt(2.0 * PI);
@@ -55,7 +65,7 @@ namespace Lexicon.Base.Math.Extensions
             }
         }
 
-        public static double SquareRoot(double source)
+        public static double SquareRoot(this double source)
         {
             return Sqrt(source);
         }

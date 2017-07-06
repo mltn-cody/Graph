@@ -98,7 +98,8 @@
     <Compile Include="Events\Event.cs" />
     <Compile Include="Log\ILogger.cs" />
     <Compile Include="Log\Log4NetLogger.cs" />
-    <Compile Include="Math\Extensions\EnumerableaggregationExtensions.cs" />
+    <Compile Include="Math\Extensions\EnumerableAggregationExtensions.cs" />
+    <Compile Include="Math\Extensions\EnumerableExtensionscs.cs" />
     <Compile Include="Math\Probability\BinData.cs" />
     <Compile Include="Math\Probability\Category.cs" />
     <Compile Include="Math\Probability\ICatagory.cs" />
