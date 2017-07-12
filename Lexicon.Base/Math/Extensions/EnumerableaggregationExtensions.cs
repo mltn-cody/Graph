@@ -7,23 +7,23 @@ namespace Lexicon.Base.Math.Extensions
 
     public static class EnumerableAggregationExtensions
     {
-        public static double Variance(this IEnumerable<double> source)
+        public static double Variance(this IEnumerable<dynamic> source)
         {
-            var enumerable = source as IList<double> ?? source.ToList();
-            var avg = enumerable.Average();
+            var enumerable = source as IList<dynamic> ?? source.ToList();
+            var avg = enumerable.GroupBy(x => x).Select(g => new { Value = g.Key, Count = g.Count() });
             var d = enumerable.Aggregate(0.0, (total, next) => total += Pow(next - avg, 2));
             return d / (enumerable.Count() - 1);
         }
 
 
-        public static double Mean(this IEnumerable<double> source)
+        public static double Mean(this IEnumerable<dynamic> source)
         {
-            var enumerable = source as IList<double> ?? source.ToList();
+            var enumerable = source as IList<dynamic> ?? source.ToList();
             if (!enumerable.Any())
                 return 0.0;
 
             double length = enumerable.Count();
-            double sum = enumerable.Sum();
+            double sum = enumerable.GroupBy(x => x).Select(g => new {Value = g.Key, Count = g.Count()}).Count();
             return sum / length;
         }
 

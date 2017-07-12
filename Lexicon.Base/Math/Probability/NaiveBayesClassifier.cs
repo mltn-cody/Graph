@@ -46,10 +46,12 @@ namespace Lexicon.Base.Math.Probability
             {
                 dataSetAsTable.Load(reader);
             }
+
             // calc data 
             var results = (from myRow in dataSetAsTable.AsEnumerable()
-                          group myRow by myRow.Field<string>(dataSetAsTable.Columns[0].ColumnName) into g
-                          select new { Name = g.Key, Count = g.Count() }).ToList();
+                group myRow by myRow.Field<string>(dataSetAsTable.Columns[0].ColumnName)
+                into g
+                select new {Name = g.Key, Count = g.Count()}).ToList();
 
             foreach (var @group in results)
             {
@@ -100,14 +102,15 @@ namespace Lexicon.Base.Math.Probability
             var setAsTable = _source.AsTable();
 
             var results = (from myRow in setAsTable.AsEnumerable()
-                           group myRow by myRow.Field<string>(setAsTable.Columns[0].ColumnName) into g
-                           select new {Name = g.Key, Count= g.Count()}).ToList();
+                group myRow by myRow.Field<string>(setAsTable.Columns[0].ColumnName)
+                into g
+                select new {Name = g.Key, Count = g.Count()}).ToList();
 
-            var propArray = 
+            var propArray =
                 obj.GetType()
-                .GetProperties()
-                .Select(x => new { x.Name, Value = x.GetValue(obj)})
-                .ToList();
+                    .GetProperties()
+                    .Select(x => new {x.Name, Value = x.GetValue(obj)})
+                    .ToList();
 
             var withCount =
             (from f in propArray
@@ -132,9 +135,11 @@ namespace Lexicon.Base.Math.Probability
                     var mean = Convert.ToDouble(DataSet.Tables["Gaussian"].Rows[i][a]);
                     var variance = Convert.ToDouble(DataSet.Tables["Gaussian"].Rows[i][++a]);
                     // you are getting the 
-                    var result = EnumerableAggregationExtensions.NormalDist(withCount[b - 1].Count, mean, variance.SquareRoot());
+                    var result =
+                        EnumerableAggregationExtensions.NormalDist(withCount[b - 1].Count, mean, variance.SquareRoot());
                     subScoreList.Add(result);
-                    a++; b++;
+                    a++;
+                    b++;
                 }
 
                 double finalScore = 0;
@@ -181,16 +186,16 @@ namespace Lexicon.Base.Math.Probability
                         });
         }
 
-        private IEnumerable<double> SelectRows(DataTable table, int column, string filter)
+        private IEnumerable<dynamic> SelectRows(DataTable table, int column, string filter)
         {
-            var _doubleList = new List<double>();
+            var _itemList = new List<dynamic>();
             var rows = table.Select(filter);
             foreach (var row in rows)
             {
-                _doubleList.Add((double)row[column]);
+                _itemList.Add((dynamic) row[column]);
             }
 
-            return _doubleList;
+            return _itemList;
         }
     }
 
@@ -213,6 +218,7 @@ namespace Lexicon.Base.Math.Probability
 
         //private decimal _prior;
         private readonly decimal[] _priors;
+
         private readonly T[] _dataset;
         private readonly Func<T, bool>[] _catagoryDefinitions;
         private readonly Dictionary<string, Func<T, bool>> _binDefinitions;
@@ -227,9 +233,10 @@ namespace Lexicon.Base.Math.Probability
         /// <remarks>
         /// <paramref name="catagoryDefinitions"/> is the dependent attribute definitions 
         /// </remarks>
-        public NaiveBayesClassifier(IEnumerable<T> dataset, bool withLaplacian = true, params Func<T, bool>[] catagoryDefinitions) 
+        public NaiveBayesClassifier(IEnumerable<T> dataset, bool withLaplacian = true,
+            params Func<T, bool>[] catagoryDefinitions)
         {
-            if(dataset == null || !dataset.Any()) throw new ArgumentException();
+            if (dataset == null || !dataset.Any()) throw new ArgumentException();
             _catagoryDefinitions = catagoryDefinitions ?? throw new ArgumentNullException(nameof(catagoryDefinitions));
             _priors = new decimal[catagoryDefinitions.Length];
             _dataset = dataset as T[] ?? dataset.ToArray();
@@ -246,10 +253,10 @@ namespace Lexicon.Base.Math.Probability
         {
             if (!categoryName.IsNullOrEmpty())
                 throw new ArgumentNullException(nameof(categoryName));
-            if(catagoryDefintion == null)
+            if (catagoryDefintion == null)
                 throw new ArgumentNullException(nameof(catagoryDefintion));
 
-                _binDefinitions.Add(categoryName.ToLower(), catagoryDefintion);
+            _binDefinitions.Add(categoryName.ToLower(), catagoryDefintion);
         }
 
         /// TODO: I would like to know what properties are being catagorized? 
@@ -265,11 +272,12 @@ namespace Lexicon.Base.Math.Probability
 
             return
                 typeof(T)
-                .GetAttributeValues((BinAttribute bin) => 
-                new BinData()
-                    {
-                        PropertyName = bin.PropertyName, BinCatagories = bin.BinCatagories
-                    }); 
+                    .GetAttributeValues((BinAttribute bin) =>
+                        new BinData()
+                        {
+                            PropertyName = bin.PropertyName,
+                            BinCatagories = bin.BinCatagories
+                        });
         }
 
 
@@ -291,13 +299,15 @@ namespace Lexicon.Base.Math.Probability
             for (var i = 0; i < _catagoryDefinitions.Length; i++)
             {
                 var temp = _dataset.Select(_catagoryDefinitions[i].Invoke);
-                _priors[i] = (decimal)temp.Count() / _dataset.Count(); // P(A) is called prior probability
+                _priors[i] = (decimal) temp.Count() / _dataset.Count(); // P(A) is called prior probability
 
-                var count = (decimal)_dataset.Count(_catagoryDefinitions[i].Invoke) + attributeConditionDictionary.Count;
+                var count = (decimal) _dataset.Count(_catagoryDefinitions[i].Invoke) +
+                            attributeConditionDictionary.Count;
 
                 attributeConditionDictionary.ForEach(kvp =>
                 {
-                    var numOfMembersSatisfyingConditionInDataSet = _dataset.Count(x => kvp.Value.Invoke(x.GetType().GetProperty(kvp.Key).GetValue(x))) + 1;
+                    var numOfMembersSatisfyingConditionInDataSet =
+                        _dataset.Count(x => kvp.Value.Invoke(x.GetType().GetProperty(kvp.Key).GetValue(x))) + 1;
                     var probabilityOf = numOfMembersSatisfyingConditionInDataSet / count;
 
                     numerator[i] *= probabilityOf;
@@ -308,12 +318,13 @@ namespace Lexicon.Base.Math.Probability
 
             for (var i = 0; i < numerator.Length; i++)
             {
-                dictionary.Add(i, numerator[i]/numerator.Sum());
+                dictionary.Add(i, numerator[i] / numerator.Sum());
             }
 
             return dictionary.Values.ToArray();
         }
 
-         
+
     }
+}
 

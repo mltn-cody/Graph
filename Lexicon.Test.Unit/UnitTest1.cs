@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using FastMember;
+using NUnit.Framework;
 using Lexicon.Base.Attributes;
 using Lexicon.Base.Math.Probability;
-using NUnit.Framework;
 
 namespace Lexicon.Test.Unit
 {
@@ -14,13 +15,13 @@ namespace Lexicon.Test.Unit
     }
 
 
-    public class Person 
+    public class Person : IClassifiable
     {
         public string Job { get; set; }
         public string Dominance { get; set; }
-        [Bin(binNames: new[] { "short", "medium", "tall"})]
+        //[Bin(binNames: new[] { "short", "medium", "tall"})]
         public double Height { get; set; }
-        public Sex Sex { get; set; }
+        //public Sex Sex { get; set; }
     }
 
     public class NaiveBayesClassifierTestSuite
@@ -30,19 +31,31 @@ namespace Lexicon.Test.Unit
         [SetUp]
         public void CreateDataSet()
         {
-            People = new List<Person>();
-            People.Add(new Person() {Job = "Developer", Dominance = "Right", Height = 56.5, Sex = Sex.Male});
-            People.Add(new Person() { Job = "Developer", Dominance = "Right", Height = 65.3, Sex = Sex.Male });
-            People.Add(new Person() { Job = "Teacher", Dominance = "Right", Height = 56.5, Sex = Sex.Female });
-            People.Add(new Person() { Job = "Teacher", Dominance = "Left", Height = 50.23, Sex = Sex.Female });
-            People.Add(new Person() { Job = "Cop", Dominance = "Right", Height = 60.2, Sex = Sex.Male });
-            People.Add(new Person() { Job = "Nurse", Dominance = "Left", Height = 58.23, Sex = Sex.Female });
+            People = new List<Person>
+            {
+                new Person() {Job = "Developer", Dominance = "Right", Height = 56.5},
+                new Person() {Job = "Developer", Dominance = "Right", Height = 65.3},
+                new Person() {Job = "Teacher", Dominance = "Right", Height = 56.5},
+                new Person() {Job = "Teacher", Dominance = "Left", Height = 50.23},
+                new Person() {Job = "Cop", Dominance = "Right", Height = 60.2},
+                new Person() {Job = "Nurse", Dominance = "Left", Height = 58.23}
+            };
 
         }
 
         [Test]
         public void OveralProbabilities()
         {
+            var table = new DataTable();            
+
+                using (var reader = new ObjectReader(People[0].GetType(), People.AsEnumerable(), null))
+            {
+                table.Load(reader);
+            }
+
+            var classifier = new Classifier<Person>(People);
+            classifier.TrainClassifier();
+            classifier.Classify(new Person { Job = "Cop", Dominance = "Left", Height =  52.6});
             //var classifierInstance = new NaiveBayesClassifier<Person>(People, true, catagoryDefinitions:);
         }
     }
