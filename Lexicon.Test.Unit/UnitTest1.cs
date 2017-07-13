@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Dynamic;
 using System.Linq;
 using FastMember;
 using NUnit.Framework;
@@ -46,12 +47,29 @@ namespace Lexicon.Test.Unit
         [Test]
         public void OveralProbabilities()
         {
-            var table = new DataTable();            
 
-                using (var reader = new ObjectReader(People[0].GetType(), People.AsEnumerable(), null))
+            dynamic expando = new ExpandoObject();
+
+            expando.A = 123;
+
+            expando.B = "def";
+
+            var wrap = ObjectAccessor.Create((object)expando);
+
+            Assert.AreEqual(123, wrap["A"]);
+
+            Assert.AreEqual("def", wrap["B"]);
+
+            IEnumerable<string> data = new[] {"A", "B", "C", "D", "E", "F", "G"};
+            var table = new DataTable();
+            foreach (var item in data)
             {
-                table.Load(reader);
+                using (var reader = ObjectReader.Create(item))
+                {
+                    table.Load(reader);
+                }
             }
+
 
             var classifier = new Classifier<Person>(People);
             classifier.TrainClassifier();
@@ -59,4 +77,6 @@ namespace Lexicon.Test.Unit
             //var classifierInstance = new NaiveBayesClassifier<Person>(People, true, catagoryDefinitions:);
         }
     }
+
+
 }
