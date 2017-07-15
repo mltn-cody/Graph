@@ -631,7 +631,5 @@ namespace Lexicon.Test.Unit
                 get { return accessor[current, memberNames[i]] ?? DBNull.Value; }
             }
 
-            private _isValueType
-
         }
 }
