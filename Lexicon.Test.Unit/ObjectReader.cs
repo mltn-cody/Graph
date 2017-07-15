@@ -124,49 +124,28 @@ namespace Lexicon.Test.Unit
                         string hunt = members[i];
 
                         foreach (var member in typeMembers)
-
                         {
-
                             if (member.Name == hunt)
-
                             {
 
                                 if (memberType == null)
-
                                 {
 
                                     var tmp = member.Type;
-
                                     memberType = Nullable.GetUnderlyingType(tmp) ?? tmp;
-
-
-
-                                    //allowNull = !(_IsValueType(memberType) && memberType == tmp);
-
-
-
-                                    // but keep checking, in case of duplicates
-
+                                    allowNull = !(memberType.IsValueType && memberType == tmp);
                                 }
 
                                 else
-
                                 {
-
                                     memberType = null; // duplicate found; say nothing
-
                                     break;
-
                                 }
-
                             }
-
                         }
 
                         this.allowNull[i] = allowNull;
-
                         this.effectiveTypes[i] = memberType ?? typeof(object);
-
                     }
 
                 }
@@ -208,8 +187,6 @@ namespace Lexicon.Test.Unit
             }
 
 
-
-#if !COREFX
 
             public override DataTable GetSchemaTable()
 
@@ -271,10 +248,6 @@ namespace Lexicon.Test.Unit
 
             }
 
-#endif
-
-
-
             public override bool HasRows
 
             {
@@ -302,57 +275,29 @@ namespace Lexicon.Test.Unit
             }
 
             public override bool Read()
-
             {
-
                 if (active)
-
                 {
-
                     var tmp = source;
-
                     if (tmp != null && tmp.MoveNext())
-
                     {
-
                         current = tmp.Current;
-
                         return true;
-
                     }
-
-                    else
-
                     {
-
                         active = false;
-
                     }
-
                 }
 
                 current = null;
-
                 return false;
-
             }
 
-
-
-            public override int RecordsAffected
-
-            {
-
-                get { return 0; }
-
-            }
-
+            public override int RecordsAffected => 0;
 
 
             protected override void Dispose(bool disposing)
-
             {
-
                 base.Dispose(disposing);
 
                 if (disposing) Shutdown();
@@ -628,16 +573,7 @@ namespace Lexicon.Test.Unit
             public override IEnumerator GetEnumerator()
 
             {
-
-#if COREFX
-
-            throw new NotImplementedException(); // https://github.com/dotnet/corefx/issues/4646
-
-#else
-
                 return new DbEnumerator(this);
-
-#endif
 
             }
 
@@ -688,18 +624,14 @@ namespace Lexicon.Test.Unit
             }
 
             /// <summary>
-
             /// Gets the value of the current object in the member specified
-
             /// </summary>
-
             public override object this[int i]
-
             {
-
                 get { return accessor[current, memberNames[i]] ?? DBNull.Value; }
-
             }
+
+            private _isValueType
 
         }
 }

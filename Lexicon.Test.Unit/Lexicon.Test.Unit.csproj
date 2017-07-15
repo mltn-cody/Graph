@@ -76,7 +76,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Tests.cs" />
+    <Compile Include="ObjectReader.cs" />
     <Compile Include="TypeHelpers.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -47,29 +47,12 @@ namespace Lexicon.Test.Unit
         [Test]
         public void OveralProbabilities()
         {
-
-            dynamic expando = new ExpandoObject();
-
-            expando.A = 123;
-
-            expando.B = "def";
-
-            var wrap = ObjectAccessor.Create((object)expando);
-
-            Assert.AreEqual(123, wrap["A"]);
-
-            Assert.AreEqual("def", wrap["B"]);
-
-            IEnumerable<string> data = new[] {"A", "B", "C", "D", "E", "F", "G"};
             var table = new DataTable();
-            foreach (var item in data)
-            {
-                using (var reader = ObjectReader.Create(item))
-                {
-                    table.Load(reader);
-                }
-            }
 
+            using (var reader = ObjectReader.Create(People))
+            {
+                table.Load(reader);
+            }
 
             var classifier = new Classifier<Person>(People);
             classifier.TrainClassifier();
