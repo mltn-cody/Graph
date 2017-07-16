@@ -10,127 +10,68 @@ using System.Data.Common;
 namespace Lexicon.Test.Unit
 {
         /// <summary>
-
         /// Provides a means of reading a sequence of objects as a data-reader, for example
-
         /// for use with SqlBulkCopy or other data-base oriented code
-
         /// </summary>
-
         public class ObjectReader : DbDataReader
-
         {
-
             private IEnumerator source;
-
             private readonly TypeAccessor accessor;
-
             private readonly string[] memberNames;
-
             private readonly Type[] effectiveTypes;
-
             private readonly BitArray allowNull;
 
 
+            object current;
 
-            /// <summary>
-
-            /// Creates a new ObjectReader instance for reading the supplied data
-
-            /// </summary>
-
-            /// <param name="source">The sequence of objects to represent</param>
-
-            /// <param name="members">The members that should be exposed to the reader</param>
-
-            public static ObjectReader Create<T>(IEnumerable<T> source, params string[] members)
-
+        /// <summary>
+        /// Creates a new ObjectReader instance for reading the supplied data
+        /// </summary>
+        /// <param name="source">The sequence of objects to represent</param>
+        /// <param name="members">The members that should be exposed to the reader</param>
+        public static ObjectReader Create<T>(IEnumerable<T> source, params string[] members)
             {
-
                 return new ObjectReader(typeof(T), source, members);
-
             }
 
-
-
             /// <summary>
-
             /// Creates a new ObjectReader instance for reading the supplied data
-
             /// </summary>
-
             /// <param name="type">The expected Type of the information to be read</param>
-
             /// <param name="source">The sequence of objects to represent</param>
-
             /// <param name="members">The members that should be exposed to the reader</param>
-
             public ObjectReader(Type type, IEnumerable source, params string[] members)
-
             {
-
                 if (source == null) throw new ArgumentOutOfRangeException("source");
-
-
-
-
-
-
-
                 bool allMembers = members == null || members.Length == 0;
 
-
-
                 this.accessor = TypeAccessor.Create(type);
-
                 if (accessor.GetMembersSupported)
-
                 {
-
                     var typeMembers = this.accessor.GetMembers();
-
-
-
                     if (allMembers)
-
                     {
-
                         members = new string[typeMembers.Count];
-
                         for (int i = 0; i < members.Length; i++)
-
                         {
-
                             members[i] = typeMembers[i].Name;
-
                         }
-
                     }
 
-
-
                     this.allowNull = new BitArray(members.Length);
-
                     this.effectiveTypes = new Type[members.Length];
 
                     for (int i = 0; i < members.Length; i++)
-
                     {
-
                         Type memberType = null;
-
                         bool allowNull = true;
-
                         string hunt = members[i];
-
                         foreach (var member in typeMembers)
                         {
                             if (member.Name == hunt)
                             {
-
                                 if (memberType == null)
                                 {
-
                                     var tmp = member.Type;
                                     memberType = Nullable.GetUnderlyingType(tmp) ?? tmp;
                                     allowNull = !(memberType.IsValueType && memberType == tmp);
@@ -151,11 +92,8 @@ namespace Lexicon.Test.Unit
                 }
 
                 else if (allMembers)
-
                 {
-
                     throw new InvalidOperationException("Member information is not available for this type; the required members must be specified explicitly");
-
                 }
 
 
@@ -172,20 +110,11 @@ namespace Lexicon.Test.Unit
 
 
 
-            object current;
 
 
 
 
-
-            public override int Depth
-
-            {
-
-                get { return 0; }
-
-            }
-
+            public override int Depth => 0;
 
 
             public override DataTable GetSchemaTable()
@@ -248,19 +177,7 @@ namespace Lexicon.Test.Unit
 
             }
 
-            public override bool HasRows
-
-            {
-
-                get
-
-                {
-
-                    return active;
-
-                }
-
-            }
+            public override bool HasRows => active;
 
             private bool active = true;
 
@@ -322,28 +239,9 @@ namespace Lexicon.Test.Unit
 
 
 
-            public override int FieldCount
+            public override int FieldCount => memberNames.Length;
 
-            {
-
-                get { return memberNames.Length; }
-
-            }
-
-            public override bool IsClosed
-
-            {
-
-                get
-
-                {
-
-                    return source == null;
-
-                }
-
-            }
-
+            public override bool IsClosed => source == null;
 
 
             public override bool GetBoolean(int i)
@@ -418,14 +316,9 @@ namespace Lexicon.Test.Unit
 
             }
 
-
-
             protected override DbDataReader GetDbDataReader(int i)
-
             {
-
                 throw new NotSupportedException();
-
             }
 
 
@@ -511,125 +404,62 @@ namespace Lexicon.Test.Unit
 
 
             public override int GetInt32(int i)
-
             {
-
                 return (int)this[i];
-
             }
-
-
 
             public override long GetInt64(int i)
-
             {
-
                 return (long)this[i];
-
             }
-
-
 
             public override string GetName(int i)
-
             {
-
                 return memberNames[i];
-
             }
-
-
 
             public override int GetOrdinal(string name)
-
             {
-
                 return Array.IndexOf(memberNames, name);
-
             }
-
-
 
             public override string GetString(int i)
-
             {
-
                 return (string)this[i];
-
             }
-
-
 
             public override object GetValue(int i)
-
             {
-
                 return this[i];
-
             }
-
-
 
             public override IEnumerator GetEnumerator()
-
             {
                 return new DbEnumerator(this);
-
             }
-
-
 
             public override int GetValues(object[] values)
-
             {
-
                 // duplicate the key fields on the stack
-
                 var members = this.memberNames;
-
                 var current = this.current;
-
                 var accessor = this.accessor;
 
-
-
                 int count = TypeHelpers.Min(values.Length, members.Length);
-
                 for (int i = 0; i < count; i++) values[i] = accessor[current, members[i]] ?? DBNull.Value;
-
                 return count;
-
             }
-
-
 
             public override bool IsDBNull(int i)
-
             {
-
                 return this[i] is DBNull;
-
             }
 
-
-
-            public override object this[string name]
-
-            {
-
-                get { return accessor[current, name] ?? DBNull.Value; }
-
-
-
-            }
+            public override object this[string name] => accessor[current, name] ?? DBNull.Value;
 
             /// <summary>
             /// Gets the value of the current object in the member specified
             /// </summary>
-            public override object this[int i]
-            {
-                get { return accessor[current, memberNames[i]] ?? DBNull.Value; }
-            }
-
+            public override object this[int i] => accessor[current, memberNames[i]] ?? DBNull.Value;
         }
 }

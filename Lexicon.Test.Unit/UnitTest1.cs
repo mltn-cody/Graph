@@ -47,12 +47,6 @@ namespace Lexicon.Test.Unit
         [Test]
         public void OveralProbabilities()
         {
-            var table = new DataTable();
-
-            using (var reader = ObjectReader.Create(People))
-            {
-                table.Load(reader);
-            }
 
             var classifier = new Classifier<Person>(People);
             classifier.TrainClassifier();

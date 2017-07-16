@@ -48,7 +48,7 @@ namespace Lexicon.Base.Math.Probability
             }
 
             // calc data 
-            var results = (from myRow in dataSetAsTable.AsEnumerable()
+            var results = (from myRow in dataSetAsTable.Rows.Cast<DataRow>()
                 group myRow by myRow.Field<string>(dataSetAsTable.Columns[0].ColumnName)
                 into g
                 select new {Name = g.Key, Count = g.Count()}).ToList();
