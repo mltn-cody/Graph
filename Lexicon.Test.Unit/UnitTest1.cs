@@ -41,7 +41,6 @@ namespace Lexicon.Test.Unit
                 new Person() {Job = "Cop", Dominance = "Right", Height = 60.2},
                 new Person() {Job = "Nurse", Dominance = "Left", Height = 58.23}
             };
-
         }
 
         [Test]

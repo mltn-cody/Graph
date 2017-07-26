@@ -102,6 +102,7 @@
     <Compile Include="Math\Extensions\EnumerableExtensionscs.cs" />
     <Compile Include="Math\Probability\BinData.cs" />
     <Compile Include="Math\Probability\Category.cs" />
+    <Compile Include="Math\Probability\Classifier.cs" />
     <Compile Include="Math\Probability\ICatagory.cs" />
     <Compile Include="Math\Probability\IClassifiable.cs" />
     <Compile Include="Math\Probability\NaiveBayesClassifier.cs" />
