@@ -161,17 +161,17 @@ namespace Lexicon.Base.Math.Probability
 
         private IEnumerable<dynamic> SelectRows(DataTable table, int column, string filter)
         {
-            var _itemList = new List<dynamic>();
+            var itemList = new List<dynamic>();
             var filterColumn = filter.Split('=')[0].Replace("'","").Trim();
             var filterValue = filter.Split('=')[1].Replace("'", "").Trim();
             var rows = table.Rows.Cast<DataRow>().ToList().Where(r => string.Equals(r.Field<string>(filterColumn),filterValue,StringComparison.InvariantCultureIgnoreCase)) ;
             var enumerable = table.Rows.Cast<DataRow>().ToList().Select(r => r.Field<string>(filterColumn)).First(x => x==filterValue);
             foreach (var row in rows)
             {
-                _itemList.Add((dynamic)row[column]);
+                itemList.Add((dynamic)row[column]);
             }
 
-            return _itemList;
+            return itemList;
         }
     }
 }

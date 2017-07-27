@@ -10,9 +10,9 @@ namespace Lexicon.Base.Math.Extensions
         public static double Variance(this IEnumerable<dynamic> source)
         {
             var enumerable = source as IList<dynamic> ?? source.ToList();
-            var avg = enumerable.GroupBy(x => x).Select(g => new { Value = g.Key, Count = g.Count() });
+            var avg = enumerable.Mean();
             var d = enumerable.Aggregate(0.0, (total, next) => total += Pow(next - avg, 2));
-            return d / (enumerable.Count() - 1);
+            return d / (enumerable.Count());
         }
 
 
