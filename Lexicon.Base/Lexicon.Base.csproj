@@ -93,9 +93,9 @@
     <Compile Include="Events\IEvent.cs" />
     <Compile Include="Extensions\AttributeExtensions.cs" />
     <Compile Include="Extensions\DataTableExtensions.cs" />
-    <Compile Include="Log\ConsoleLogger.cs" />
     <Compile Include="Core\CoreNinjectModule.cs" />
     <Compile Include="Events\Event.cs" />
+    <Compile Include="Log\ConsoleLogger.cs" />
     <Compile Include="Log\ILogger.cs" />
     <Compile Include="Log\Log4NetLogger.cs" />
     <Compile Include="Math\Extensions\EnumerableAggregationExtensions.cs" />

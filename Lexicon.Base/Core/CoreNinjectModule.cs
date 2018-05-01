@@ -8,6 +8,7 @@ using Ninject.Extensions.Conventions;
 using Ninject.Extensions.Conventions.BindingGenerators;
 using Ninject.Modules;
 using Ninject.Syntax;
+using Lexicon.Base.Log;
 
 namespace Lexicon.Base.Core
 {
@@ -19,7 +20,7 @@ namespace Lexicon.Base.Core
         // this is a common trick it seems, programming practice 
         public Assembly[] Assemblies { get; }
 
-        public ILogger Logger => Kernel?.TryGet<ILogger>();
+        public Log.ILogger Logger => Kernel?.TryGet<Log.ILogger>();
 
         public CoreNinjectModule(params Assembly[] assemblies)
         {
@@ -29,7 +30,7 @@ namespace Lexicon.Base.Core
 
         public override void Load()
         {
-            Bind<ILogger>().To<Log4NetLogger>().InSingletonScope();
+            Bind<log4net.Core.ILogger>().To<Log4NetLogger>().InSingletonScope();
             Kernel.Bind(x => x
                 .From(Assemblies)
                 .SelectAllTypes()
